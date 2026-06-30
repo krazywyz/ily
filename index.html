@@ -4,349 +4,388 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>For Enhle 🌹</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --cream:#fff6f8; --rose:#ef90a0; --rose-deep:#c64b5b;
-    --ink:#2a1a16; --gold:#d7b891;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.45}
-  main{max-width:980px;margin:0 auto;padding:24px}
+:root{
+  --cream:#fff6f8;
+  --rose:#ef90a0;
+  --rose-deep:#c64b5b;
+  --ink:#2a1a16;
+  --gold:#d7b891;
+  --muted:#7a4f4f;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.45}
+.container{max-width:980px;margin:0 auto;padding:20px}
 
-  /* Intro overlay */
-  #intro{
-    position:fixed;inset:0;background:var(--ink);display:flex;flex-direction:column;gap:16px;
-    align-items:center;justify-content:center;color:var(--gold);z-index:9999;padding:24px;text-align:center;
-  }
-  #intro .title{font-family:'Playfair Display',serif;color:#fff;font-size:36px;font-style:italic}
-  #openBtn{padding:10px 20px;border-radius:999px;border:1.5px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer}
+/* Intro overlay */
+#intro{position:fixed;inset:0;background:var(--ink);display:flex;flex-direction:column;gap:16px;align-items:center;justify-content:center;color:var(--gold);z-index:9999;padding:24px;text-align:center}
+.title{font-family:'Playfair Display',serif;color:#fff;font-size:34px;font-style:italic}
+.open-btn{appearance:none;border:none;padding:12px 22px;border-radius:999px;border:1.5px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;font-weight:600}
 
-  /* Basic sections */
-  .section{padding:32px 0;border-bottom:1px solid rgba(0,0,0,0.03)}
-  .section-label{font-size:12px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
-  .hero-title{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--rose-deep);margin-bottom:8px;text-align:center}
-  .hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;text-align:center;color:var(--ink);max-width:760px;margin:0 auto}
+/* Basic sections */
+.section{padding:28px 0;border-bottom:1px solid rgba(0,0,0,.03)}
+.section-label{font-size:12px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--rose-deep);margin-bottom:8px;text-align:center}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;text-align:center;color:var(--ink);max-width:760px;margin:0 auto}
 
-  .letter-box{background:var(--ink);color:var(--cream);padding:18px;border-radius:10px;border:1px solid rgba(214,135,146,.08);font-family:'Cormorant Garamond',serif;white-space:pre-wrap;min-height:160px}
+/* Letter */
+.letter-box{background:var(--ink);color:var(--cream);padding:18px;border-radius:10px;border:1px solid rgba(214,135,146,.08);font-family:'Cormorant Garamond',serif;white-space:pre-wrap;min-height:140px}
 
-  /* timeline / key moments cards */
-  .tl-item{padding:18px 0}
-  .tl-card{background:#fff;border-radius:18px;padding:18px;border:1px solid rgba(198,75,91,.04);box-shadow:0 6px 20px rgba(198,75,91,.02)}
-  .tl-placeholder{height:140px;border-radius:10px;background:linear-gradient(180deg,rgba(239,144,160,.03),rgba(239,144,160,.02));margin-bottom:12px}
-  .tl-date{font-family:'Cormorant Garamond',serif;color:var(--rose-deep);font-size:13px;text-align:center;margin-bottom:6px}
-  .tl-title{font-family:'Cormorant Garamond',serif;color:var(--rose-deep);font-size:20px;text-align:center;margin-bottom:6px}
-  .tl-excerpt{color:#5a3a32;font-size:15px;text-align:center;margin-bottom:8px}
-  .tl-open{display:block;width:100%;padding:12px;border-radius:10px;border:1px solid var(--rose-deep);background:transparent;color:var(--rose-deep);cursor:pointer;text-align:center}
+/* Timeline */
+.tl-item{padding:18px 0;border-bottom:1px dashed rgba(198,75,91,.08)}
+.tl-date{font-family:'Cormorant Garamond',serif;color:var(--rose-deep);font-size:13px}
+.tl-title{font-family:'Cormorant Garamond',serif;color:var(--rose-deep);font-size:20px;margin:8px 0}
+.tl-excerpt{color:#5a3a32;font-size:15px}
+.tl-btn{padding:10px 16px;border-radius:8px;border:1px solid var(--rose-deep);background:transparent;color:var(--rose-deep);cursor:pointer;margin-top:10px}
 
-  /* content warning */
-  .content-warning{background:#fff3f3;border:1px solid #f1c6c6;padding:12px;border-radius:8px;color:#6b2a2a;margin-bottom:10px}
+/* Content warning */
+.content-warning{background:#fff3f3;border:1px solid #f1c6c6;padding:12px;border-radius:8px;color:#6b2a2a;margin-bottom:10px}
 
-  /* modal (chat) */
-  #chat-modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;padding:16px;z-index:2000}
-  #chat-modal.open{display:flex}
-  .modal-card{background:var(--ink);border-radius:14px;padding:18px;max-width:720px;width:100%;max-height:86vh;overflow:auto;color:var(--cream);position:relative}
-  .modal-close{position:absolute;right:12px;top:12px;background:none;border:none;font-size:22px;cursor:pointer;color:#f8d6db}
-  .msg-row{margin:10px 0;display:flex;gap:12px;align-items:flex-start}
-  .avatar{width:40px;height:40px;border-radius:50%;background:#c26979;display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-  .bubble.you{background:linear-gradient(180deg,rgba(255,255,255,0.05),rgba(255,255,255,0.03));padding:12px;border-radius:12px;color:var(--cream)}
-  .bubble.them{background:black;padding:12px;border-radius:12px;color:white}
+/* Modal */
+#chat-modal{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;align-items:center;justify-content:center;padding:16px;z-index:2000}
+#chat-modal.open{display:flex}
+.modal-card{background:var(--cream);border-radius:12px;padding:16px;max-width:820px;width:100%;max-height:86vh;overflow:auto}
+.modal-close{float:right;background:none;border:none;font-size:20px;cursor:pointer;color:var(--ink)}
 
-  /* love grid */
-  .love-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
-  .love-card{background:rgba(255,255,255,.02);border:1px solid rgba(239,144,160,.06);padding:12px;border-radius:10px;text-align:center;display:flex;flex-direction:column;gap:8px;min-height:190px}
-  .love-thumb{width:100%;height:140px;object-fit:cover;border-radius:8px;background:#f6eaea}
+/* Countdown */
+.cd-grid{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.cd-box{background:#fff;padding:12px;border-radius:10px;min-width:100px;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.06)}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--rose)}
+.cd-label{font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
 
-  /* countdown */
-  .cd-grid{display:flex;gap:12px;justify-content:center;margin-top:12px;flex-wrap:wrap}
-  .cd-box{background:#fff;padding:12px;border-radius:10px;min-width:100px;text-align:center;box-shadow:0 8px 24px rgba(0,0,0,.06)}
-  .cd-num{font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--rose)}
-  .cd-label{font-size:11px;color:#7a4f4f;letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+/* Reasons */
+.add-reason-btn{padding:10px 18px;border-radius:8px;border:1px solid var(--rose-deep);background:transparent;color:var(--rose-deep);cursor:pointer;font-weight:700}
+#reasons-count{font-family:'Cormorant Garamond',serif;font-size:48px;color:var(--rose);margin:12px 0;text-align:center}
 
-  /* distance-only card (replacement for map) */
-  .distance-card{background:linear-gradient(180deg,#fff,#fff6f7);border-radius:18px;padding:18px;border:1px solid rgba(198,75,91,.04);max-width:720px;margin:12px auto;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-  .distance-left{flex:1;min-width:220px}
-  .distance-big{font-family:'Cormorant Garamond',serif;font-size:42px;color:var(--rose-deep);font-weight:600}
-  .distance-sub{color:#6b4a4a;margin-top:6px}
-  .distance-item{display:flex;gap:12px;align-items:center;border-top:1px solid rgba(198,75,91,.03);padding-top:12px;margin-top:12px;width:100%}
-  .icon-circle{width:48px;height:48px;border-radius:50%;background:white;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(198,75,91,.03)}
-  .open-maps-link{display:inline-block;padding:12px 18px;border-radius:12px;background:var(--rose-deep);color:white;text-decoration:none;margin-top:12px}
+/* Quiz */
+.quiz-card{background:#fff6f7;border-radius:12px;padding:12px;border:1px solid rgba(198,75,91,.06)}
+.option{display:block;padding:12px;border-radius:10px;border:1px solid rgba(198,75,91,.06);background:#fff;margin-bottom:8px;text-align:left;cursor:pointer}
 
-  /* quiz (kept) */
-  .quiz-card{background:#fff6f7;border-radius:20px;padding:20px;border:1px solid rgba(198,75,91,.06);max-width:720px;margin:0 auto;position:relative}
-  .quiz-top-progress{display:flex;justify-content:center;gap:12px;margin-bottom:14px}
-  .quiz-step{width:38px;height:6px;background:rgba(198,75,91,.12);border-radius:6px}
-  .quiz-step.active{background:linear-gradient(90deg,var(--rose),var(--rose-deep))}
-  .quiz-question{font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--rose-deep);text-align:center;margin-bottom:14px}
-  .quiz-options{display:flex;flex-direction:column;gap:10px}
-  .quiz-option{background:#fff;border-radius:14px;padding:14px;border:1px solid rgba(198,75,91,.08);cursor:pointer;text-align:left;font-size:16px}
-  .quiz-option.selected{border-color:var(--rose-deep);box-shadow:0 8px 24px rgba(239,144,160,.06)}
-  .quiz-footer{display:flex;justify-content:center;gap:10px;margin-top:14px}
+/* Music player */
+.music-player{position:fixed;right:16px;bottom:16px;background:var(--ink);color:var(--cream);padding:10px 14px;border-radius:999px;display:flex;gap:12px;align-items:center;box-shadow:0 12px 40px rgba(0,0,0,.18);z-index:1500}
+.music-title{font-weight:700}
+.music-artist{font-size:12px;color:var(--gold)}
+.play-btn{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.08);background:transparent;color:var(--cream);cursor:pointer}
 
-  @media(max-width:520px){
-    .hero-title{font-size:22px}
-    .letter-box{font-size:15px}
-    .distance-big{font-size:32px}
-  }
+/* Responsive */
+@media(max-width:520px){
+  .hero-title{font-size:22px}
+  #reasons-count{font-size:40px}
+}
 </style>
 </head>
 <body>
 
-  <!-- Intro overlay -->
-  <div id="intro" role="dialog" aria-modal="true" aria-label="Intro overlay">
-    <div style="font-family:'Cormorant Garamond',serif;color:var(--gold);letter-spacing:.25em;text-transform:uppercase">for the moments that made us</div>
-    <div class="title">For Enhle</div>
-    <button id="openBtn" onclick="openSite()" aria-label="Open site">Open</button>
+<!-- Intro overlay -->
+<div id="intro" role="dialog" aria-modal="true" aria-label="Intro overlay">
+  <div style="font-family:'Cormorant Garamond',serif;color:var(--gold);letter-spacing:.25em;text-transform:uppercase">for the moments that made us</div>
+  <div class="title">For Enhle</div>
+  <button id="openBtn" class="open-btn" type="button" aria-label="Open site">Open</button>
+</div>
+
+<!-- Music player -->
+<div id="music" class="music-player" style="display:none" aria-hidden="true">
+  <div>
+    <div id="musicTitle" class="music-title">Superpowers</div>
+    <div id="musicArtist" class="music-artist">Daniel Caesar</div>
   </div>
-
-  <!-- Music Player UI -->
-  <div class="music-player" id="music-player" style="display:none" aria-hidden="false">
-    <div style="display:flex;align-items:center;gap:8px">
-      <div style="display:flex;flex-direction:column;align-items:flex-start" class="music-info">
-        <div class="music-title" id="music-title">Superpowers</div>
-        <div class="music-artist" id="music-artist">Daniel Caesar</div>
-      </div>
-    </div>
-    <div style="display:flex;align-items:center;gap:8px">
-      <button id="playPauseBtn" class="play-btn" aria-label="Play or pause">Play</button>
-    </div>
+  <div>
+    <button id="playPauseBtn" class="play-btn" aria-label="Play/Pause">Play</button>
   </div>
+</div>
 
-  <main id="main-content" style="opacity:0;pointer-events:none">
+<!-- Hidden container for YouTube player -->
+<div id="yt-player" style="display:none"></div>
 
-    <!-- HERO -->
-    <section class="section" id="hero">
-      <div class="section-label">To my girl</div>
-      <h1 class="hero-title">Our Story — A Letter and the Moments Between Us</h1>
-      <p class="hero-sub">A small place where I keep our nights, our letters, the moments that mattered, and everything I love about you.</p>
-    </section>
+<!-- Main content -->
+<main id="main-content" class="container" style="display:none">
 
-    <!-- LETTER -->
-    <section class="section" id="letter">
-      <div class="section-label">A letter — from Calvin</div>
-      <div class="letter-box" id="typed-letter" aria-live="polite"></div>
-      <div style="text-align:center;margin-top:10px">
-        <small style="color:var(--gold)">— Calvin (Grade 10)</small>
-        <button id="toggle-sensitive-btn" class="tl-btn" style="margin-left:10px" aria-pressed="false">Show sensitive (H)</button>
-      </div>
-    </section>
+  <section class="section" id="hero">
+    <div class="section-label">To my girl</div>
+    <h1 class="hero-title">Our Story — A Letter and the Moments Between Us</h1>
+    <p class="hero-sub">A small place where I keep our nights, our letters, the moments that mattered, and everything I love about you.</p>
+  </section>
 
-    <!-- COUNTDOWN -->
-    <section class="section" id="since">
-      <div class="section-label">Since the beginning</div>
-      <h2 class="hero-title" style="font-size:20px;margin-bottom:6px">Every second since we first said hey</h2>
-      <div class="cd-grid" role="status" aria-live="polite">
-        <div class="cd-box"><div class="cd-num" id="cd-days">00</div><div class="cd-label">Days</div></div>
-        <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">Hours</div></div>
-        <div class="cd-box"><div class="cd-num" id="cd-minutes">00</div><div class="cd-label">Minutes</div></div>
-        <div class="cd-box"><div class="cd-num" id="cd-seconds">00</div><div class="cd-label">Seconds</div></div>
-      </div>
-      <div style="text-align:center;margin-top:12px;color:#6b4a4a">And every single one reminds me how much you mean to me.</div>
-    </section>
-
-    <!-- TIMELINE -->
-    <section class="section" id="timeline">
-      <div class="section-label">Key Moments</div>
-
-      <!-- We'll render cards from data (JS) -->
-      <div id="timeline-cards"></div>
-
-    </section>
-
-    <!-- Distance card (replaces map) -->
-    <section class="section" id="distance">
-      <h2 class="hero-title" style="font-size:20px;margin-bottom:8px">The space between us</h2>
-      <div class="distance-card" id="distance-card" aria-live="polite">
-        <div class="distance-left">
-          <div style="font-size:14px;color:#c88f93">Nelspruit → Casheen, Rustenburg</div>
-          <div class="distance-big" id="distance-big">— km</div>
-          <div class="distance-sub" id="distance-sub">Distance apart</div>
-
-          <div class="distance-item">
-            <div class="icon-circle">🚩</div>
-            <div>
-              <div style="font-weight:600" id="origin-name">Nelspruit, Mpumalanga</div>
-              <div style="font-size:13px;color:#7a4f4f">Origin</div>
-            </div>
-          </div>
-
-          <div class="distance-item">
-            <div class="icon-circle">🚗</div>
-            <div>
-              <div style="font-weight:600" id="time-text">— hours</div>
-              <div style="font-size:13px;color:#7a4f4f">Driving time</div>
-            </div>
-          </div>
-
-          <a id="open-maps-btn" class="open-maps-link" target="_blank" rel="noopener noreferrer">Open directions in Google Maps</a>
-        </div>
-
-        <div style="flex:0 0 220px;min-width:200px">
-          <div style="background:linear-gradient(180deg,rgba(239,144,160,.03),rgba(239,144,160,.02));border-radius:10px;padding:14px;text-align:center">
-            <div style="font-weight:600;color:#7a4f4f">Destination</div>
-            <div style="margin-top:8px;font-weight:700" id="dest-name">Casheen, Rustenburg</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why I love you -->
-    <section class="section" style="background:var(--ink);color:var(--cream)">
-      <div class="section-label">What I love</div>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--cream);text-align:center;margin-bottom:8px">Reasons I love you</h2>
-      <div style="max-width:780px;margin:0 auto;padding:6px;color:var(--cream)">
-        <p style="font-size:15px">Enhle, you are beautiful inside and out. You're kind and thoughtful; your eyes and your personality make me fall in love again and again. I love every little thing about you — this page is my way to show you how much you mean to me.</p>
-      </div>
-    </section>
-
-    <!-- Moments grid -->
-    <section class="section">
-      <div class="section-label">Moments</div>
-      <h2 class="hero-title" style="font-size:20px">Our story, in chats & photos</h2>
-      <div id="love-list" class="love-grid" aria-live="polite"></div>
-    </section>
-
-    <!-- Days since hey -->
-    <section class="section">
-      <div class="section-label">Count</div>
-      <h2 class="hero-title" style="font-size:20px">Days since we said "Heyy" (12 Jan 2026)</h2>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--rose);text-align:center" id="counter-num">0</div>
-    </section>
-
-    <!-- Reasons counter -->
-    <section class="section" style="background:#fff6f7">
-      <div class="section-label">Reasons I love you</div>
-      <h2 class="hero-title" style="font-size:20px">This number keeps growing</h2>
-      <div style="font-size:36px;color:var(--rose);text-align:center" id="reasons-count">0</div>
-      <div style="text-align:center;margin-top:8px;color:#6b4a4a">and counting...</div>
-      <div style="text-align:center;margin-top:12px"><button id="add-reason-btn" class="map-btn">Add one more reason ✦</button></div>
-    </section>
-
-    <!-- Quiz (kept as-is) -->
-    <section class="section" id="quiz">
-      <div class="section-label">For fun</div>
-      <h2 class="hero-title" style="font-size:20px">A little quiz — one question at a time</h2>
-      <div class="quiz-card" style="max-width:820px;margin:0 auto">
-        <div class="quiz-top-progress" id="quiz-progress" aria-hidden="true"></div>
-        <div class="quiz-question" id="quiz-question"></div>
-        <div class="quiz-options" id="quiz-options"></div>
-        <div class="quiz-footer">
-          <button id="quiz-next" class="tl-btn" disabled>Next</button>
-          <button id="quiz-retry" class="tl-btn">Retry</button>
-        </div>
-        <div id="quiz-result" style="margin-top:12px;text-align:center;font-weight:700" aria-live="polite"></div>
-      </div>
-    </section>
-
-    <footer style="padding:18px 0;text-align:center;color:#666;font-size:13px">Put optional images in images/ (img1.jpg … img10.jpg) and the moments grid will show them; timeline covers do not require photos. Background song: Superpowers — Daniel Caesar (YouTube).</footer>
-
-  </main>
-
-  <!-- Chat modal -->
-  <div id="chat-modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-card" role="document" onclick="event.stopPropagation()">
-      <button class="modal-close" onclick="closeChat()" aria-label="Close">✕</button>
-      <h3 id="chat-title" style="font-family:'Cormorant Garamond',serif;color:#f0b6bc;margin-bottom:8px"></h3>
-      <div id="chat-body"></div>
+  <section class="section" id="letter">
+    <div class="section-label">A letter — from Calvin</div>
+    <div class="letter-box" id="typed-letter" aria-live="polite"></div>
+    <div style="text-align:center;margin-top:10px">
+      <small style="color:var(--gold)">— Calvin (Grade 10)</small>
+      <button id="toggleSensitiveBtn" class="tl-btn" style="margin-left:10px">Show sensitive (H)</button>
     </div>
-  </div>
+  </section>
 
-  <script>
-  /*****************************************
-   * DATA (exact key moment texts you provided)
-   *****************************************/
-  const chatMoments = [
-    {
-      id:'first-text',
-      date:'12 Jan 2026 — 20:02',
-      title:'The First Text',
-      excerpt:`20:02 — You sent: "Heyy"
-20:12 — Enhle replied: "Heyyyy" (10 minutes later — and fun fact: she actually said "Heyyyy" with enthusiasm, not "heyy?" in confusion like you remember 😂)
-You two went on to talk until after midnight on the very first night, keeping her company while she was unplaiting her braids.`,
-      messages:[
-        {who:'You',time:'20:02',text:'Heyy'},
-        {who:'Enhle',time:'20:12',text:'Heyyyy (enthusiastic)'},
-        {who:'You',time:'23:50',text:"I enjoyed keeping you company while you unplaited your braids."}
-      ]
-    },
-    {
-      id:'birthday-letter',
-      date:'21 Jan 2026 — 05:31',
-      title:'Her Birthday Letter',
-      excerpt:`05:31 — You sent: "Happy Birthday to the most beautiful, gorgeous, amazing, wonderful, sweet-hearted, caring, one of a kind girl I've ever met. May your day just be as amazing and beautiful as you 💕"
-05:41 — You apologised: "I'm hella sorry I didn't send it @00:00 😔 I fell asleep writing it" (you had been up writing her letter)
-05:35 — She replied: "Aw thank you sm 😭❤️ Don't make me cry now 🥺❤️"
-05:50 — She said: "Its okay I love it ❤️"`,
-      messages:[
-        {who:'You',time:'05:31',text:`Happy Birthday to the most beautiful, gorgeous, amazing, wonderful, sweet-hearted, caring, one of a kind girl I've ever met. May your day just be as amazing and beautiful as you 💕`},
-        {who:'You',time:'05:41',text:`I'm hella sorry I didn't send it @00:00 😔 I fell asleep writing it`},
-        {who:'Enhle',time:'05:35',text:`Aw thank you sm 😭❤️ Don't make me cry now 🥺❤️`},
-        {who:'Enhle',time:'05:50',text:`Its okay I love it ❤️`}
-      ]
-    },
-    {
-      id:'make-official',
-      date:'21 Jan 2026 — 22:28',
-      title:`"Let's Make It Official"`,
-      excerpt:`22:28 — You said: "Let's make it official 🤷🏾‍♂️"
-22:29 — She replied: "You want a long distance relationship" (The proposal happened on her birthday itself.)`,
-      messages:[
-        {who:'You',time:'22:28',text:`Let's make it official 🤷🏾‍♂️`},
-        {who:'Enhle',time:'22:29',text:`You want a long distance relationship`}
-      ]
-    },
-    {
-      id:'official-ask',
-      date:'1 Feb 2026 — 19:58',
-      title:'The Official "Be My Girlfriend?"',
-      excerpt:`19:58 — You asked: "Do you wanna be my girlfriend?"
-20:06 — She replied: "Am I not?" and "What happened to the joke 😭😭😭"
-20:19 — You said: "Mission successful 💕 You laughed 😭😭" (She'd already claimed you as hers before you even officially asked.)`,
-      messages:[
-        {who:'You',time:'19:58',text:`Do you wanna be my girlfriend?`},
-        {who:'Enhle',time:'20:06',text:`Am I not? What happened to the joke 😭😭😭`},
-        {who:'You',time:'20:19',text:`Mission successful 💕 You laughed 😭😭`}
-      ]
-    },
-    {
-      id:'valentine',
-      date:'14 Feb 2026 — 00:02',
-      title:"Valentine's Day",
-      excerpt:`00:02 — You texted: "Happy Valentine's day to my beautiful, amazing and gorgeous girlfriend 💕❤️" (First Valentine's Day together.)`,
-      messages:[
-        {who:'You',time:'00:02',text:`Happy Valentine's day to my beautiful, amazing and gorgeous girlfriend 💕❤️`},
-        {who:'Enhle',time:'00:10',text:`Love you 💕`}
-      ]
-    },
-    {
-      id:'breakup',
-      date:'17 Jun 2026',
-      title:'The Breakup & Getting Back Together',
-      excerpt:`~03:47 — Things escalated on a call and Enhle started saying "Bye", telling you she was going to block you`,
-      messages:[
-        {who:'You',time:'03:47',text:`~03:47 — Things escalated on a call and Enhle started saying "Bye", telling you she was going to block you`, sensitive:true},
-        {who:'You',time:'03:48',text:`03:48–04:04 — You pleaded: "It doesn't have to end like this... just give me one more chance to redeem myself"`, sensitive:true},
-        {who:'You',time:'04:50',text:`04:50 — You sent her a long, deeply personal letter from your heart while she was away writing her exam`, sensitive:true},
-        {who:'Enhle',time:'10:05',text:`10:05 — She got back from school and texted: "Amo... I saw your message and it's the sweetest thing you sent to me"`},
-        {who:'Enhle',time:'10:13',text:`10:13 — She said: "I js got home btw if you wanna call" — you called`},
-        {who:'Enhle',time:'14:36',text:`14:36 — She texted: "I love you more ❤️" — back together ✅`}
-      ]
+  <section class="section" id="since">
+    <div class="section-label">Since the beginning</div>
+    <h2 class="hero-title" style="font-size:20px;margin-bottom:6px">Every second since we first said hey</h2>
+    <div class="cd-grid" aria-live="polite">
+      <div class="cd-box"><div class="cd-num" id="cd-days">00</div><div class="cd-label">Days</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-hours">00</div><div class="cd-label">Hours</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-minutes">00</div><div class="cd-label">Minutes</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-seconds">00</div><div class="cd-label">Seconds</div></div>
+    </div>
+    <div style="text-align:center;margin-top:12px;color:#6b4a4a">And every single one reminds me how much you mean to me.</div>
+  </section>
+
+  <section class="section" id="timeline">
+    <div class="section-label">Key moments</div>
+
+    <div class="tl-item">
+      <div class="tl-date">12 Jan 2026</div>
+      <div class="tl-title">The First Text</div>
+      <div class="tl-excerpt">
+        20:02 — You sent: "Heyy"<br>
+        20:12 — Enhle replied: "Heyyyy" (enthusiastic)<br>
+        You talked until after midnight while she unplaited her braids.
+      </div>
+      <div><button class="tl-btn" data-id="first-text">Open conversation</button></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">21 Jan 2026 — 05:31</div>
+      <div class="tl-title">Her Birthday Letter</div>
+      <div class="tl-excerpt">
+        05:31 — You sent a long birthday message and letter.<br>
+        05:41 — You apologised: "I'm hella sorry I didn't send it @00:00 😔 I fell asleep writing it"<br>
+        05:35 — She replied: "Aw thank you sm 😭❤️ Don't make me cry now 🥺❤️"<br>
+        05:50 — "Its okay I love it ❤️"
+      </div>
+      <div><button class="tl-btn" data-id="birthday-letter">Open conversation</button></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">21 Jan 2026 — 22:28</div>
+      <div class="tl-title">"Let's Make It Official"</div>
+      <div class="tl-excerpt">
+        22:28 — "Let's make it official 🤷🏾‍♂️"<br>
+        22:29 — "You want a long distance relationship"
+      </div>
+      <div><button class="tl-btn" data-id="make-official">Open conversation</button></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">1 Feb 2026 — 19:58</div>
+      <div class="tl-title">The Official "Be My Girlfriend?"</div>
+      <div class="tl-excerpt">
+        19:58 — "Do you wanna be my girlfriend?"<br>
+        20:06 — "Am I not? What happened to the joke 😭😭😭"<br>
+        20:19 — "Mission successful 💕 You laughed 😭😭"
+      </div>
+      <div><button class="tl-btn" data-id="official-ask">Open conversation</button></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">14 Feb 2026 — 00:02</div>
+      <div class="tl-title">Valentine's Day</div>
+      <div class="tl-excerpt">00:02 — "Happy Valentine's day to my beautiful, amazing and gorgeous girlfriend 💕❤️"</div>
+      <div><button class="tl-btn" data-id="valentine">Open conversation</button></div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-date">17 Jun 2026 — early morning</div>
+      <div class="tl-title">The Breakup & Getting Back Together</div>
+      <div class="content-warning">
+        Before diving in — while going through the chat, I came across the moment on June 17th at 3:55 AM where you mentioned not wanting to become suicidal again. I'm genuinely glad you and Enhle found your way back to each other — how are you doing right now, really? If you ever need to talk or want support resources, I'm here. 💙
+        <div style="margin-top:8px;font-weight:700">Content warning: this conversation contains mention of suicidal thoughts. If you are struggling, please contact a trusted person or local emergency services.</div>
+      </div>
+      <div class="tl-excerpt" id="excerpt-breakup">~03:47 — Things escalated on a call and Enhle started saying "Bye", telling you she was going to block you. (Sensitive — press H to reveal)</div>
+      <div><button class="tl-btn" data-id="breakup">Open conversation</button></div>
+    </div>
+
+  </section>
+
+  <section class="section" id="reasons">
+    <div class="section-label">Reasons I love you</div>
+    <h2 class="hero-title" style="font-size:20px">This number keeps growing</h2>
+    <div style="max-width:720px;margin:12px auto;text-align:center;color:var(--cream);padding:12px;background:transparent">
+      <div id="reasons-count">0</div>
+      <div style="margin-top:8px;color:#f0d9d9">and counting...</div>
+      <div style="margin-top:12px"><button id="addReason" class="add-reason-btn">Add one more reason ✦</button></div>
+    </div>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-label">For fun</div>
+    <h2 class="hero-title" style="font-size:20px">A little quiz — one question at a time</h2>
+    <div class="quiz-card" style="max-width:820px;margin:0 auto">
+      <div id="quizSlide" style="min-height:140px"></div>
+      <div style="display:flex;justify-content:center;gap:8px;margin-top:12px">
+        <button id="quizRetry" class="tl-btn">Retry</button>
+      </div>
+      <div id="quizResult" style="margin-top:12px;text-align:center;font-weight:700"></div>
+    </div>
+  </section>
+
+  <footer style="padding:18px 0;text-align:center;color:#666;font-size:13px">Background song: Superpowers — Daniel Caesar (YouTube).</footer>
+</main>
+
+<!-- modal -->
+<div id="chat-modal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeChat()" aria-label="Close">✕</button>
+    <h3 id="chatTitle" style="font-family:'Cormorant Garamond',serif;color:var(--rose-deep)"></h3>
+    <div id="chatBody"></div>
+  </div>
+</div>
+
+<!-- YouTube iframe API -->
+<script src="https://www.youtube.com/iframe_api"></script>
+
+<script>
+/* ====== Data (exact chat text) ====== */
+const chatMoments = {
+  'first-text': {
+    date: '12 Jan 2026',
+    title: 'The First Text',
+    messages: [
+      {who:'You', time:'20:02', text:'You sent: "Heyy"'},
+      {who:'Enhle', time:'20:12', text:'Enhle replied: "Heyyyy" (enthusiastic)'},
+      {who:'You', time:'23:50', text:'You talked until after midnight while she unplaited her braids.'}
+    ],
+    excerpt: `20:02 — You sent: "Heyy"
+20:12 — Enhle replied: "Heyyyy" (enthusiastic)
+You talked until after midnight...`
+  },
+  'birthday-letter': {
+    date: '21 Jan 2026 — 05:31',
+    title: 'Her Birthday Letter',
+    messages: [
+      {who:'You', time:'05:31', text:`"Happy Birthday to the most beautiful, gorgeous, amazing, wonderful, sweet-hearted, caring, one of a kind girl I've ever met. May your day just be as amazing and beautiful as you 💕"`},
+      {who:'You', time:'05:41', text:`"I'm hella sorry I didn't send it @00:00 😔 I fell asleep writing it"`},
+      {who:'Enhle', time:'05:35', text:`"Aw thank you sm 😭❤️ Don't make me cry now 🥺❤️"`},
+      {who:'Enhle', time:'05:50', text:`"Its okay I love it ❤️"`},
+    ],
+    excerpt: '05:31 — You sent the birthday message & letter.'
+  },
+  'make-official': {
+    date: '21 Jan 2026 — 22:28',
+    title: "Let's Make It Official",
+    messages: [
+      {who:'You', time:'22:28', text:`"Let's make it official 🤷🏾‍♂️"`},
+      {who:'Enhle', time:'22:29', text:`"You want a long distance relationship"`},
+    ],
+    excerpt: '22:28 — Let\'s make it official'
+  },
+  'official-ask': {
+    date: '1 Feb 2026 — 19:58',
+    title: 'The Official "Be My Girlfriend?"',
+    messages: [
+      {who:'You', time:'19:58', text:`"Do you wanna be my girlfriend?"`},
+      {who:'Enhle', time:'20:06', text:`"Am I not? What happened to the joke 😭😭😭"`},
+      {who:'You', time:'20:19', text:`"Mission successful 💕 You laughed 😭😭"`},
+    ],
+    excerpt: '19:58 — The official ask'
+  },
+  'valentine': {
+    date: "14 Feb 2026 — 00:02",
+    title: "Valentine's Day",
+    messages: [
+      {who:'You', time:'00:02', text:`"Happy Valentine's day to my beautiful, amazing and gorgeous girlfriend 💕❤️"`},
+    ],
+    excerpt: "00:02 — Valentine's message"
+  },
+  'breakup': {
+    date: '17 Jun 2026',
+    title: 'The Breakup & Getting Back Together',
+    sensitive: true,
+    messages: [
+      {who:'Enhle', time:'~03:47', text: 'Bye'},
+      {who:'You', time:'03:48-04:04', text: "It doesn't have to end like this... just give me one more chance to redeem myself"},
+      {who:'You', time:'04:50', text: "(You sent a long, deeply personal letter from your heart while she was away writing her exam)"},
+      {who:'Enhle', time:'10:05', text: "Amo... I saw your message and it's the sweetest thing you sent to me"},
+      {who:'Enhle', time:'10:13', text: "I js got home btw if you wanna call"},
+      {who:'Enhle', time:'14:36', text: "I love you more ❤️"}
+    ],
+    excerpt: '~03:47 — Things escalated on a call... (sensitive)'
+  },
+  'why-love': {
+    date: 'Ongoing',
+    title: 'Why I love you',
+    messages: [ {who:'You', time:'—', text: "You are beautiful inside and out. I love everything about you."} ],
+    excerpt: 'Your kindness, your eyes, your personality — everything about you.'
+  }
+};
+
+/* quiz */
+const quizQuestions = [
+  { q: "How did I (Calvin) first find you?", options:["TikTok live","Instagram DM","WhatsApp","Facebook"], correct:0 },
+  { q: "When did we first start talking?", options:["12 Jan 2026","1 Feb 2026","21 Jan 2026","14 Feb 2026"], correct:0 },
+  { q: "What did I do on 21 Jan 2026?", options:["Sent a birthday letter & proposed","Broke up","Moved cities","Made a mixtape"], correct:0 },
+  { q: "Where do you (Enhle) live?", options:["Mpumalanga","Rustenburg","Cape Town","Johannesburg"], correct:0 },
+  { q: "How far apart are we (approx)?", options:["382 km / ~4h17m","100 km","600 km","50 km"], correct:0 }
+];
+
+/* state */
+let showSensitive = false;
+let quizIndex = 0;
+let quizAnswers = [];
+let ytPlayer = null;
+
+/* ---------- Utilities ---------- */
+function qsel(sel){ return document.querySelector(sel); }
+function qselAll(sel){ return Array.from(document.querySelectorAll(sel)); }
+function escapeHtml(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,"&#039;"); }
+
+/* ---------- Typed letter ---------- */
+function typeLetter(){
+  const lines = [
+    "Enhle,",
+    "On 12 Jan 2026 at 20:02 I typed 'Heyy' and you replied — that small hello started everything.",
+    "On 21 Jan 2026 — your birthday — I proposed to you in my own clumsy, heartfelt way and I sent that birthday letter I kept writing all night.",
+    "We've had our moments — arguments where I made mistakes and had to apologise, breakups that hurt, and the times we chose to forgive and come back together.",
+    "You are beautiful inside and out; your kindness, your thoughtfulness, your eyes, your personality — everything about you is perfect to me. I love you so deeply.",
+    "— Calvin"
+  ];
+  const el = document.getElementById('typed-letter'); if(!el) return;
+  let pi=0, ci=0;
+  function step(){
+    if(pi >= lines.length) return;
+    const line = lines[pi];
+    if(ci <= line.length){
+      const before = lines.slice(0, pi).join('\n\n');
+      el.textContent = (before ? before + '\n\n' : '') + line.slice(0, ci);
+      ci++;
+      setTimeout(step, 18 + Math.random()*20);
+    } else { pi++; ci=0; setTimeout(step, 220); }
+  }
+  step();
+}
+
+/* ---------- Modal (open conversation) ---------- */
+function openConversation(id){
+  try {
+    const m = chatMoments[id];
+    if(!m) return;
+    const modal = document.getElementById('chat-modal');
+    const title = document.getElementById('chatTitle');
+    const body = document.getElementById('chatBody');
+    title.textContent = `${m.title} — ${m.date}`;
+    body.innerHTML = '';
+    if(m.sensitive && !showSensitive){
+      const p = document.createElement('div'); p.textContent = '[This conversation is sensitive — press H to reveal]'; p.style.color = '#6b2a2a';
+      body.appendChild(p);
+    } else {
+      m.messages.forEach(msg=>{
+        const row = document.createElement('div'); row.style.display='flex'; row.style.gap='10px'; row.style.margin='8px 0';
+        const avatar = document.createElement('div'); avatar.style.width='44px'; avatar.style.height='44px'; avatar.style.borderRadius='50%'; avatar.style.display='flex'; avatar.style.alignItems='center'; avatar.style.justifyContent='center'; avatar.style.fontWeight='700'; avatar.style.color='#fff';
+        avatar.style.flexShrink='0';
+        avatar.style.background = (msg.who === 'You' || msg.who === 'Calvin') ? 'linear-gradient(180deg,var(--rose),var(--rose-deep))' : '#ddd';
+        avatar.textContent = (msg.who||'?')[0];
+        const bubble = document.createElement('div'); bubble.style.padding='8px 10px'; bubble.style.borderRadius='10px'; bubble.style.maxWidth='76%';
+        bubble.style.background = (msg.who === 'You' || msg.who === 'Calvin') ? 'linear-gradient(90deg,#ffeef1,rgba(239,144,160,.04))' : '#fff';
+        bubble.innerHTML = `<strong>${escapeHtml(msg.who)}</strong> · ${escapeHtml(msg.time)}<br>${escapeHtml(msg.text)}`;
+        if(msg.who === 'You' || msg.who === 'Calvin'){ row.style.flexDirection='row-reverse'; row.style.justifyContent='flex-end'; }
+        row.appendChild(avatar); row.appendChild(bubble); body.appendChild(row);
+      });
     }
-  ];
+    modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+  } catch(err) { console.error('openConversation error', err); }
+}
+function closeChat(){ const modal = document.getElementById('chat-modal'); modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
 
-  /*****************************************
-   * App logic
-   *****************************************/
-  const imageFiles = [
-    'images/img1.jpg','images/img2.jpg','images/img3.jpg','images/img4.jpg',
-    'images/img5.jpg','images/img6.jpg','images/img7.jpg','images/img8.jpg',
-    'images/img9.jpg','images/img10.jpg'
-  ];
-
-  // show site
-  function openSite(){
-    document.getElementById('intro').style.display = 'none';
-    const main = document.getElementById('main-content');
-    main.style.opacity = '1';
-    main
+/* ---------- Toggle sensitive ---------- */
+function toggleSensitive(){
+  showSensitive = !showSensitive;
+  const btn = document.getElemen
